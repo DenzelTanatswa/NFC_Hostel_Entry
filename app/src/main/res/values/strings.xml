@@ -1,0 +1,15 @@
+<resources>
+    <string name="nfc_icon_desc">NFC Icon</string>
+    <string name="scan_nfc">Scan your NFC Tag</string>
+    <string name="hold_nfc">Hold your device near the NFC tag</string>
+    <string name="access_granted">Access Granted</string>
+    <string name="nfc_id_label">NFC ID:</string>
+    <string name="nfc_not_supported">NFC not supported on this device</string>
+    <string name="nfc_success">NFC Scanned Successfully</string>
+    <string name="access_message">
+Access Granted
+NFC ID:
+%1$s
+</string>
+
+</resources>

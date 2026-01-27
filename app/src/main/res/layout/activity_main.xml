@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="24dp"
+    android:background="?android:colorBackground"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="8dp"
+        android:padding="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <!-- NFC Icon -->
+            <ImageView
+                android:src="@drawable/baseline_nfc_24"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:contentDescription="@string/nfc_icon_desc"
+                android:layout_marginBottom="16dp"
+                app:tint="?attr/colorPrimary" />
+
+            <!-- Main Text -->
+            <TextView
+                android:id="@+id/tvStatus"
+                android:text="@string/scan_nfc"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="#034694"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <!-- Sub Text -->
+            <TextView
+                android:text="@string/hold_nfc"
+                android:textSize="14sp"
+                android:textColor="?android:textColorSecondary"
+                android:layout_marginTop="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/btnTestAccess"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Simulate NFC Scan"
+                android:layout_marginTop="16dp"/>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>
