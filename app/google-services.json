@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "353289457432",
+    "project_id": "nfc-hostel-entry",
+    "storage_bucket": "nfc-hostel-entry.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:353289457432:android:43e48690dfb474750f586d",
+        "android_client_info": {
+          "package_name": "com.example.nfchostelentry"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC29oZt1_7HE3WMHzB3lUDib-Mo85XQvVE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
