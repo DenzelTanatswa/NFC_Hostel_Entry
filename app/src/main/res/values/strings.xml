@@ -1,15 +1,18 @@
 <resources>
+    <string name="app_name">NFC Hostel Entry</string>
     <string name="nfc_icon_desc">NFC Icon</string>
     <string name="scan_nfc">Scan your NFC Tag</string>
     <string name="hold_nfc">Hold your device near the NFC tag</string>
-    <string name="access_granted">Access Granted</string>
+    <string name="access_granted">ACCESS GRANTED</string>
+    <string name="access_denied">ACCESS DENIED</string>
     <string name="nfc_id_label">NFC ID:</string>
-    <string name="nfc_not_supported">NFC not supported on this device</string>
+    <string name="nfc_not_supported">NFC Not Supported</string>
     <string name="nfc_success">NFC Scanned Successfully</string>
-    <string name="access_message">
-Access Granted
-NFC ID:
-%1$s
-</string>
-
+    <string name="student_found">Student FOUND in Firebase</string>
+    <string name="student_not_found">Student NOT FOUND</string>
+    <string name="firebase_error">Firebase ERROR</string>
+    <string name="database_error">DATABASE ERROR</string>
+    <string name="checking_uid">Checking UID: %1$s</string>
+    <string name="uid_format">UID: %1$s</string>
+    <string name="reversed_uid_format">Reversed UID: %1$s</string>
 </resources>

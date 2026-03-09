@@ -11,7 +11,6 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.FirebaseDatabase
-// Nfc project..............
 
 class MainActivity : AppCompatActivity() {
 
@@ -31,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         nfcAdapter = NfcAdapter.getDefaultAdapter(this)
 
         if (nfcAdapter == null) {
-            Toast.makeText(this, "NFC Not Supported", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, R.string.nfc_not_supported, Toast.LENGTH_LONG).show()
         }
     }
 
@@ -73,19 +72,20 @@ class MainActivity : AppCompatActivity() {
                 String.format("%02X", byte)
             }
 
-            statusText.text = "UID: $uid"
+            statusText.text = getString(R.string.uid_format, uid)
 
-            Toast.makeText(this, "UID: $uid", Toast.LENGTH_LONG).show()
-            Toast.makeText(this, "Reversed UID: $reversedUid", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, getString(R.string.uid_format, uid), Toast.LENGTH_LONG).show()
+            Toast.makeText(this, getString(R.string.reversed_uid_format, reversedUid), Toast.LENGTH_LONG).show()
 
             checkUidInFirebase(uid)
         }
     }
+    
     private fun checkUidInFirebase(uid: String) {
 
         val cleanedUid = uid.replace(":", "")
 
-        Toast.makeText(this, "Checking UID: $cleanedUid", Toast.LENGTH_LONG).show()
+        Toast.makeText(this, getString(R.string.checking_uid, cleanedUid), Toast.LENGTH_LONG).show()
 
         val database = FirebaseDatabase.getInstance()
         val studentsRef = database.getReference("students")
@@ -95,31 +95,31 @@ class MainActivity : AppCompatActivity() {
 
                 if (snapshot.exists()) {
 
-                    Toast.makeText(this, "Student FOUND in Firebase", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, R.string.student_found, Toast.LENGTH_LONG).show()
 
                     val status = snapshot.child("status").value.toString()
                     val name = snapshot.child("name").value.toString()
 
                     if (status == "active") {
-                        statusText.text = "ACCESS GRANTED"
+                        statusText.text = getString(R.string.access_granted)
                         nameText.text = name
                         mainLayout.setBackgroundColor(Color.GREEN)
                     }
 
                 } else {
 
-                    Toast.makeText(this, "Student NOT FOUND", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, R.string.student_not_found, Toast.LENGTH_LONG).show()
 
-                    statusText.text = "ACCESS DENIED"
+                    statusText.text = getString(R.string.access_denied)
                     mainLayout.setBackgroundColor(Color.RED)
                 }
 
             }
             .addOnFailureListener {
 
-                Toast.makeText(this, "Firebase ERROR", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, R.string.firebase_error, Toast.LENGTH_LONG).show()
 
-                statusText.text = "DATABASE ERROR"
+                statusText.text = getString(R.string.database_error)
             }
     }
 }

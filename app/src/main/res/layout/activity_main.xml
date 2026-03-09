@@ -2,6 +2,7 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mainLayout"
     android:orientation="vertical"
     android:gravity="center"
     android:padding="24dp"
@@ -20,7 +21,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:gravity="center">
+            android:gravity="center"
+            android:padding="24dp">
 
             <!-- NFC Icon -->
             <ImageView
@@ -38,6 +40,16 @@
                 android:textSize="22sp"
                 android:textStyle="bold"
                 android:textColor="#034694"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <!-- Name Text -->
+            <TextView
+                android:id="@+id/tvName"
+                android:text=""
+                android:textSize="18sp"
+                android:textColor="?android:textColorPrimary"
+                android:layout_marginTop="8dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
